@@ -1,0 +1,251 @@
+//ques 1
+ int numStudents, i;
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
+    
+    int marks[numStudents]; 
+    printf("Enter the marks of %d students:\n", numStudents);
+    for (i = 0; i < numStudents; i++) {
+        printf("Enter marks for student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    for (i = 0; i < numStudents; i++) {
+        marks[i] += 5;
+    }
+    printf("\nUpdated marks after increasing by 5:\n");
+    for (i = 0; i < numStudents; i++) {
+        printf("Student %d: %d\n", i + 1, marks[i]);
+    } return 0;
+}
+// ques 2
+int x,i;
+int marks [5];
+for(int x=0;x<5; x++){
+printf("Enter the marks of students: ");
+scanf("%d",&marks [x]);
+}
+for(i=0;i<=4;i++){
+printf("\nmarks of the students %d" ,marks[i]);
+switch(marks[i])
+{
+case 75 ... 100:
+printf("Grade A");
+break;
+case 60 ... 74:
+printf("Grade B");
+break;
+case 40 ... 59:
+printf("Grade C");
+break;
+case 1 ... 39:
+printf("Grade D");
+
+default:
+break;
+}}
+return 0;}
+//ques 3
+ int numStudents, i;
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
+    int marks[numStudents]; 
+    printf("Enter the marks of %d students:\n", numStudents);
+    for (i = 0; i < numStudents; i++) {
+        printf("Enter marks for student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    int found = 0; 
+    for (i = 0; i < numStudents; i++) {
+        if (marks[i] == 99) {
+            printf("The first student who scored 99 is Student %d (Index %d).\n", i + 1, i);
+            found = 1;
+            break;  
+        }
+    }
+    if (!found) {
+        printf("No student scored 99 marks.\n");
+    }
+
+    return 0;
+}
+//ques 4
+int numStudents, i;
+    int count = 0; 
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
+    int marks[numStudents];  
+    printf("Enter the marks of %d students:\n", numStudents);
+    for (i = 0; i < numStudents; i++) {
+        printf("Enter marks for student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    printf("\nStudents who scored 99 marks:\n");
+    for (i = 0; i < numStudents; i++) {
+        if (marks[i] == 99) {
+            printf("Student %d (Index %d)\n", i + 1, i);
+            count++; 
+        }
+    }
+    if (count > 0) {
+        printf("\nTotal number of students who scored 99: %d\n", count);
+    } else {
+        printf("\nNo student scored 99 marks.\n");
+    }
+
+    return 0;
+}
+   //ques 5
+ int numStudents, i;
+    int sum = 0;
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
+    
+    int marks[numStudents];  
+    printf("Enter the marks of %d students:\n", numStudents);
+    for (i = 0; i < numStudents; i++) {
+        printf("Enter marks for student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+        sum += marks[i];  
+    }
+
+    printf("\nThe sum of all student scores is: %d\n", sum);
+
+    return 0;
+}
+//ques 6
+int numStudents, i;
+    int sum = 0;  
+    float average;  
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
+    
+    int marks[numStudents]; 
+    printf("Enter the marks of %d students:\n", numStudents);
+    for (i = 0; i < numStudents; i++) {
+        printf("Enter marks for student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+        sum += marks[i];  
+    }
+    average = (float)sum / numStudents;
+    printf("\nThe average score of the students is: %.2f\n", average);
+
+    return 0;
+}
+//ques 7
+ int numStudents, i;
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
+    
+    int marks[numStudents];  
+    printf("Enter the marks of %d students:\n", numStudents);
+    for (i = 0; i < numStudents; i++) {
+        printf("Enter marks for student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    printf("\nChecking whether scores are even or odd:\n");
+    for (i = 0; i < numStudents; i++) {
+        if (marks[i] % 2 == 0) {
+            printf("Student %d's score %d is even.\n", i + 1, marks[i]);
+        } else {
+            printf("Student %d's score %d is odd.\n", i + 1, marks[i]);
+        }
+    }
+
+    return 0;
+}
+//ques 8
+int numStudents, i;
+    int maxScore, minScore;
+    printf("Enter the number of students: ");
+    scanf("%d", &numStudents);
+    
+    int marks[numStudents];  
+    printf("Enter the marks of %d students:\n", numStudents);
+    for (i = 0; i < numStudents; i++) {
+        printf("Enter marks for student %d: ", i + 1);
+        scanf("%d", &marks[i]);
+    }
+    maxScore = marks[0];
+    minScore = marks[0];
+    for (i = 1; i < numStudents; i++) {
+        if (marks[i] > maxScore) {
+            maxScore = marks[i];  
+        }
+        if (marks[i] < minScore) {
+            minScore = marks[i];  
+        }
+    }
+    printf("\nThe highest score is: %d\n", maxScore);
+    printf("The lowest score is: %d\n", minScore);
+
+    return 0;
+}
+//ques 9
+int peakElement(int arr[], int n) {
+    if (n == 1 || arr[0] >= arr[1]) {
+        return 0; 
+    }
+    if (arr[n - 1] >= arr[n - 2]) {
+        return n - 1; 
+    }
+    for (int i = 1; i < n - 1; i++) {
+        if (arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1]) {
+            return i; 
+        }
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int arr[n];
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    int peakIndex = peakElement(arr, n);
+
+    if (peakIndex != -1) {
+        printf("A peak element is: %d at index %d\n", arr[peakIndex], peakIndex);
+    } else {
+        printf("No peak element found.\n");
+    }
+
+    return 0;
+}
+//ques 13
+void rotateArray(int arr[], int size) {
+    int last = arr[size-1];
+    for (int i = size-1;i>0;i--) {
+        arr[i] = arr[i-1];
+    }
+    arr[0] = last;
+}
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter the elements of the array:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    printf("Original array: ");
+    printArray(arr, n);
+    rotateArray(arr, n);
+    printf("Array after rotation: ");
+    printArray(arr, n);
+
+    return 0;
+}
+
+
